@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.loginapp.paid.LandingActivity">
+
+    <TextView
+        android:id="@+id/tv_welcome_message_landing_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        android:text="@string/welcome_message_paid"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.288"
+        tools:text="Welcome To Paid Activity" />
+
+    <TextView
+        android:id="@+id/tv_email_landing_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@+id/tv_welcome_message_landing_activity"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/tv_welcome_message_landing_activity"
+        app:layout_constraintTop_toBottomOf="@+id/tv_welcome_message_landing_activity"
+        tools:text="example@gmail.com" />
+
+    <Button
+        android:id="@+id/btn_ok_landing_activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/ok"
+        android:textColor="@color/white"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/tv_email_landing_activity"
+        app:layout_constraintStart_toStartOf="@+id/tv_email_landing_activity"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_landing_activity" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

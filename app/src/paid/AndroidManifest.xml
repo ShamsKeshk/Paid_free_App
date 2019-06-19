@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application>
+        <activity android:name="com.example.loginapp.paid.LandingActivity">
+
+        </activity>
+
+        <activity-alias
+            tools:replace="android:targetActivity"
+            android:name="${applicationId}.aliasMain"
+            android:targetActivity="com.example.loginapp.paid.LandingActivity"/>
+
+        <activity
+            tools:node="remove"
+            android:name="com.example.loginapp.landing_activity.LandingActivity" />
+
+    </application>
+
+</manifest>
