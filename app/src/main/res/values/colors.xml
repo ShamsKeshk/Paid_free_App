@@ -2,8 +2,7 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#b71c1c</color>
     <color name="white">#ffffff</color>
-    <color name="red">#b71c1c</color>
-    <color name="blue">#1A237E</color>
+    <color name="btn_open_post_activity_color">#008577</color>
 </resources>

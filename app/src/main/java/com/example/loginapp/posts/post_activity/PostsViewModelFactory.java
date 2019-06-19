@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.loginapp.data.AppRepository;
-import com.example.loginapp.posts.post_activity.PostsViewModel;
 
 public class PostsViewModelFactory extends ViewModelProvider.NewInstanceFactory {
 

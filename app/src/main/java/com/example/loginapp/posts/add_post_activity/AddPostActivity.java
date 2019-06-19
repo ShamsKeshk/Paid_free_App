@@ -1,74 +1,87 @@
 package com.example.loginapp.posts.add_post_activity;
 
+import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.loginapp.R;
-import com.example.loginapp.data.AppRepository;
-import com.example.loginapp.data.sync_network.NetworkDataSource;
 import com.example.loginapp.databinding.ActivityAddPostBinding;
-import com.example.loginapp.posts.Posts;
+import com.example.loginapp.posts.ExtraConstants;
+import com.example.loginapp.posts.InjectorUtils;
+import com.example.loginapp.posts.post_activity.Post;
 
 public class AddPostActivity extends AppCompatActivity {
 
- ActivityAddPostBinding binding;
+    private ActivityAddPostBinding binding;
 
- TextView textView ;
+    private AddPostActivityViewModel addPostActivityViewModel;
 
-    AddPostActivityViewModel addPostActivityViewModel;
+    private Post mPost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_post);
 
-        NetworkDataSource networkDataSource = NetworkDataSource.getInstance();
-        AppRepository appRepository = AppRepository.getInstance(networkDataSource);
+        initViewModel();
+        initDataBinding(addPostActivityViewModel);
 
-        AddPostViewModelFactory addPostViewModelFactory = new AddPostViewModelFactory(appRepository);
-        addPostActivityViewModel = ViewModelProviders.of(this,addPostViewModelFactory)
+        if (getIntent() != null) {
+            if (getIntent().hasExtra(ExtraConstants.EXTRA_POST_CONTENT)) {
+                mPost = getIntent().getParcelableExtra(ExtraConstants.EXTRA_POST_CONTENT);
+                Toast.makeText(getApplicationContext(), " post value : " + mPost.getTitle(), Toast.LENGTH_LONG).show();
+                setPostValuesToViews(mPost);
+            }
+        }
+
+        addPostActivityViewModel.getPostsMutableLiveData().observe(this, new Observer<Post>() {
+            @Override
+            public void onChanged(Post posts) {
+                if (ValidationUtils.isDataValidToCreate(posts, binding)) {
+                        Toast.makeText(getApplicationContext(), "Post changed ", Toast.LENGTH_LONG).show();
+                        createPost(posts);
+                    }
+            }
+        });
+
+    }
+
+    private void initViewModel() {
+        AddPostViewModelFactory addPostViewModelFactory = InjectorUtils.getAddPostsViewModelFactory(this);
+        addPostActivityViewModel = ViewModelProviders.of(this, addPostViewModelFactory)
                 .get(AddPostActivityViewModel.class);
+    }
 
-
-        binding = DataBindingUtil.setContentView(AddPostActivity.this,R.layout.activity_add_post);
-
-
+    private void initDataBinding(AddPostActivityViewModel addPostActivityViewModel) {
+        binding = DataBindingUtil.setContentView(AddPostActivity.this, R.layout.activity_add_post);
         binding.setAddPostActivityViewModel(addPostActivityViewModel);
         binding.setLifecycleOwner(this);
+    }
 
+    private void createPost(Post posts) {
+        Toast.makeText(getApplicationContext(), "Post changed from create Post ", Toast.LENGTH_LONG).show();
 
-
-        addPostActivityViewModel.getPostsMutableLiveData().observe(this, new Observer<Posts>() {
+        addPostActivityViewModel.getPostsLiveData(posts).observe(this, new Observer<Post>() {
             @Override
-            public void onChanged(Posts posts) {
-                Toast.makeText(getApplicationContext(),"Post changed ",Toast.LENGTH_LONG).show();
-              createPost(posts);
+            public void onChanged(Post posts) {
+                Toast.makeText(getApplicationContext(), "Post value " + posts.getTitle(), Toast.LENGTH_LONG).show();
+                String postTitle = posts.getTitle();
+                String postDesc = posts.getBody();
+                int postUserId = posts.getUserId();
+                int postId = posts.getId();
+                binding.tvCreatedPostResultId.setText(postTitle + "\n" + postDesc + "\n" + postUserId + "\n" + postId);
             }
         });
 
 
     }
-    private void createPost(Posts posts){
-        Toast.makeText(getApplicationContext(),"Post changed from create Post ",Toast.LENGTH_LONG).show();
 
-        addPostActivityViewModel.getPostsLiveData(posts).observe(this, new Observer<Posts>() {
-            @Override
-            public void onChanged(Posts posts) {
-                Toast.makeText(getApplicationContext(),"Post value " + posts.getTitle(),Toast.LENGTH_LONG).show();
-                String postTitle = posts.getTitle();
-                String postDesc = posts.getBody();
-                int postUserId = posts.getUserId();
-                int postId = posts.getId();
-                binding.tvCreatedPostResultId.setText(postTitle + "\n" +postDesc+"\n"+postUserId+"\n"+postId);
-            }
-        });
-
-
+    private void setPostValuesToViews(Post post) {
+        addPostActivityViewModel.mPostTitle.setValue(post.getTitle());
+        addPostActivityViewModel.mPostDesc.setValue(post.getBody());
+        addPostActivityViewModel.mPostUserId.setValue(String.valueOf(post.getUserId()));
     }
 }

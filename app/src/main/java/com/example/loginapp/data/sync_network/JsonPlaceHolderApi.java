@@ -1,6 +1,6 @@
 package com.example.loginapp.data.sync_network;
 
-import com.example.loginapp.posts.Posts;
+import com.example.loginapp.posts.post_activity.Post;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import retrofit2.http.POST;
 public interface JsonPlaceHolderApi {
 
     @GET("/posts")
-    Call<List<Posts>> getAllPosts();
+    Call<List<Post>> getAllPosts();
 
     @POST("/posts")
-    Call<Posts> createPost(@Body Posts post);
+    Call<Post> createPost(@Body Post post);
 }

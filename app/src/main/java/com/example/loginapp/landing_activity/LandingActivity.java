@@ -1,13 +1,13 @@
 package com.example.loginapp.landing_activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.loginapp.BuildConfig;
 import com.example.loginapp.R;
@@ -45,7 +45,7 @@ public class LandingActivity extends AppCompatActivity {
         });
     }
 
-    private void openPostsActivity(){
+    private void openPostsActivity() {
         Intent intent = new Intent(LandingActivity.this, PostsActivity.class);
         startActivity(intent);
     }

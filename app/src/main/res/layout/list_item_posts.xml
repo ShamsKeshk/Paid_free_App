@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="157dp"
+            android:layout_marginEnd="8dp"
             android:ellipsize="end"
             android:fontFamily="serif-monospace"
             android:lines="2"
@@ -24,6 +24,7 @@
             android:textStyle="bold"
             app:layout_constrainedWidth="true"
             app:layout_constraintEnd_toStartOf="@+id/tv_post_id_list_id"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Post Title" />
@@ -32,31 +33,30 @@
             android:id="@+id/tv_post_id_list_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="serif-monospace"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_post_title_list_id"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.833"
-            app:layout_constraintStart_toEndOf="@+id/tv_post_title_list_id"
-            app:layout_constraintTop_toTopOf="@+id/tv_post_title_list_id"
-            app:layout_constraintVertical_bias="0.0"
-            tools:text="Post Id"
-            android:fontFamily="serif-monospace"/>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Post Id" />
 
         <TextView
             android:id="@+id/tv_post_description_list_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_post_title_list_id"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tv_post_title_list_id"
-            app:layout_constraintTop_toBottomOf="@+id/tv_post_title_list_id"
-            tools:text="Description"
-            android:paddingBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="serif-monospace"
+            android:paddingStart="16dp"
             android:paddingEnd="16dp"
-            android:fontFamily="serif-monospace"/>
+            android:paddingBottom="16dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_post_title_list_id"
+            tools:text="Description" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

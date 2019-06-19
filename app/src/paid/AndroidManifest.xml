@@ -8,13 +8,13 @@
         </activity>
 
         <activity-alias
-            tools:replace="android:targetActivity"
             android:name="${applicationId}.aliasMain"
-            android:targetActivity="com.example.loginapp.paid.LandingActivity"/>
+            android:targetActivity="com.example.loginapp.paid.LandingActivity"
+            tools:replace="android:targetActivity" />
 
         <activity
-            tools:node="remove"
-            android:name="com.example.loginapp.landing_activity.LandingActivity" />
+            android:name="com.example.loginapp.landing_activity.LandingActivity"
+            tools:node="remove" />
 
     </application>
 

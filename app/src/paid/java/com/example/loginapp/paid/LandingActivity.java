@@ -8,7 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.loginapp.R;
-import com.example.loginapp.landing_activity.post_activity.PostsActivity;
+import com.example.loginapp.posts.post_activity.PostsActivity;
 
 public class LandingActivity extends com.example.loginapp.landing_activity.LandingActivity {
 
@@ -26,7 +26,7 @@ public class LandingActivity extends com.example.loginapp.landing_activity.Landi
         mTextView = findViewById(R.id.tv_email_landing_activity);
         mButton = findViewById(R.id.btn_ok_landing_activity);
 
-        if (getIntent() != null){
+        if (getIntent() != null) {
             mEmail = getIntent().getStringExtra("email");
         }
 
@@ -35,13 +35,13 @@ public class LandingActivity extends com.example.loginapp.landing_activity.Landi
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Ok",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Ok", Toast.LENGTH_LONG).show();
                 openPostsActivity();
             }
         });
     }
 
-    private void openPostsActivity(){
+    private void openPostsActivity() {
         Intent intent = new Intent(LandingActivity.this, PostsActivity.class);
         startActivity(intent);
     }

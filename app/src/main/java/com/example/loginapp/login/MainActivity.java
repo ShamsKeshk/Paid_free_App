@@ -1,14 +1,14 @@
 package com.example.loginapp.login;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
-
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.example.loginapp.R;
 import com.example.loginapp.databinding.ActivityMainBinding;
@@ -35,15 +35,15 @@ public class MainActivity extends AppCompatActivity {
         loginViewModel.getUser().observe(this, new Observer<LoginUser>() {
             @Override
             public void onChanged(LoginUser loginUser) {
-                if (ValidateUtil.getInstance().validate(loginUser,binding)){
-                    Toast.makeText(getApplicationContext(),"Email :" + loginUser.getEmail() ,Toast.LENGTH_LONG).show();
+                if (loginUser != null && ValidateUtil.getInstance().validate(loginUser, binding)) {
+                    Toast.makeText(getApplicationContext(), "Email :" + loginUser.getEmail(), Toast.LENGTH_LONG).show();
                     open(loginUser);
                 }
             }
         });
     }
 
-    private void open(LoginUser loginUser){
+    private void open(LoginUser loginUser) {
        /* Intent intent = new Intent(MainActivity.this, LandingActivity.class);
         intent.putExtra("email",loginUser.getEmail());
         startActivity(intent); */
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         String packageName = getApplicationContext().getPackageName();
         ComponentName componentName = new ComponentName(packageName, packageName + ".aliasMain");
         intent.setComponent(componentName);
-        intent.putExtra("email",loginUser.getEmail());
+        intent.putExtra("email", loginUser.getEmail());
         startActivity(intent);
     }
 
