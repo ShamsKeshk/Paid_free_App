@@ -16,7 +16,7 @@ public interface PostsDao {
     @Query("SELECT p.id,p.userId,p.title,p.body FROM posts p ")
     LiveData<List<Post>> getPosts();
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     long createPost(Post post);
 
     @Query("SELECT p.id,p.userId,p.title,p.body FROM posts p WHERE p.id = :id")

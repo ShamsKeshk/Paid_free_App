@@ -27,7 +27,7 @@ public class AddPostActivityViewModel extends ViewModel {
 
     public LiveData<Post> getPostsLiveData(Post post) {
        // return appRepository.createPost(post);
-        return appRepository.createPost(post);
+        return appRepository.getPostMutableLiveData(post);
     }
 
     public MutableLiveData<Post> getPostsMutableLiveData() {
