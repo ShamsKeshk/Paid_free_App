@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.example.loginapp.R;
 import com.example.loginapp.posts.post_activity.PostsActivity;
 
-public class LandingActivity extends com.example.loginapp.landing_activity.LandingActivity {
+public class LandingActivity extends com.example.loginapp.home_activity.LandingActivity {
 
     private String mEmail;
 
@@ -21,7 +21,7 @@ public class LandingActivity extends com.example.loginapp.landing_activity.Landi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_landing);
+        setContentView(R.layout.activity_home);
 
         mTextView = findViewById(R.id.tv_email_landing_activity);
         mButton = findViewById(R.id.btn_ok_landing_activity);

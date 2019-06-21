@@ -5,4 +5,9 @@
     <color name="colorAccent">#b71c1c</color>
     <color name="white">#ffffff</color>
     <color name="btn_open_post_activity_color">#008577</color>
+
+
+    <color name="first_fragment_list_items_background_color">#37474f</color>
+    <color name="fragment_first_background">#102027</color>
+    <color name="secondary_text">#62727b</color>
 </resources>

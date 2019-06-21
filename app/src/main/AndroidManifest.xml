@@ -19,25 +19,29 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning"
         tools:replace="android:label">
-        <activity android:name=".posts.add_post_activity.AddPostActivity"
-            android:parentActivityName=".posts.post_activity.PostsActivity">
-
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".posts.post_activity.PostsActivity"/>
+        <activity
+            android:name=".design_activity.DesignActivity"
+            android:label="@string/title_activity_design"
+            android:theme="@style/DesignActivityTheme"/>
+        <activity
+            android:name=".posts.add_post_activity.view.AddPostActivity"
+            android:parentActivityName=".posts.post_activity.view.PostsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".posts.post_activity.view.PostsActivity" />
         </activity>
         <activity
-            android:name=".posts.post_activity.PostsActivity"
+            android:name=".posts.post_activity.view.PostsActivity"
             android:label="@string/title_activity_posts"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:launchMode="singleTop"/>
-        <activity android:name=".landing_activity.LandingActivity" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".home_activity.view.HomeActivity" />
 
         <activity-alias
             android:name="${applicationId}.aliasMain"
-            android:targetActivity=".landing_activity.LandingActivity" />
+            android:targetActivity=".home_activity.view.HomeActivity" />
 
-
-        <activity android:name=".login.MainActivity">
+        <activity android:name=".login.view.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

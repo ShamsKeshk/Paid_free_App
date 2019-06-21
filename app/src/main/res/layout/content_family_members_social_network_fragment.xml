@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@null">
+
+    <include
+        layout="@layout/fragment_first_part_three_card_title"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list_of_work_user_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null" />
+
+</LinearLayout>

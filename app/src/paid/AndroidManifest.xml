@@ -13,7 +13,7 @@
             tools:replace="android:targetActivity" />
 
         <activity
-            android:name="com.example.loginapp.landing_activity.LandingActivity"
+            android:name="com.example.loginapp.home_activity.view.HomeActivity"
             tools:node="remove" />
 
     </application>

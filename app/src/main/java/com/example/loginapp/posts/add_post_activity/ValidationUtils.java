@@ -3,7 +3,7 @@ package com.example.loginapp.posts.add_post_activity;
 import android.text.TextUtils;
 
 import com.example.loginapp.databinding.ActivityAddPostBinding;
-import com.example.loginapp.posts.post_activity.Post;
+import com.example.loginapp.posts.post_activity.model.Post;
 
 import java.util.Objects;
 

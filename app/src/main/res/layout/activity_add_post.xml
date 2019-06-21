@@ -7,12 +7,12 @@
 
         <variable
             name="AddPostActivityViewModel"
-            type="com.example.loginapp.posts.add_post_activity.AddPostActivityViewModel" />
+            type="com.example.loginapp.posts.add_post_activity.viewmodel.AddPostActivityViewModel" />
     </data>
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".posts.add_post_activity.AddPostActivity">
+    tools:context=".posts.add_post_activity.view.AddPostActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
