@@ -7,7 +7,8 @@
     <color name="btn_open_post_activity_color">#008577</color>
 
 
-    <color name="first_fragment_list_items_background_color">#37474f</color>
-    <color name="fragment_first_background">#102027</color>
-    <color name="secondary_text">#62727b</color>
+    <color name="first_fragment_list_items_background_color">#2B2C42</color>
+    <color name="fragment_first_background">#191A28</color>
+    <color name="secondary_text">#898595</color>
 </resources>
+

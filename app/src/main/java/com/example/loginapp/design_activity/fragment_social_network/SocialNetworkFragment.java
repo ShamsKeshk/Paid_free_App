@@ -29,9 +29,13 @@ public class SocialNetworkFragment extends Fragment {
     @BindView(R.id.rv_list_of_family_members_id)
     RecyclerView rvFamilyMembers;
 
+    @BindView(R.id.rv_notifications_list)
+    RecyclerView rvNotificationList;
+
     private ProfileCardAdapter mProfileCardAdapter;
     private WorkFriendsAdapter mWorkFriendsAdapter;
     private FamilyMembersAdapter mFamilyMembersAdapter;
+    private NotificationsAdapter mNotificationsAdapter;
 
 
     public SocialNetworkFragment() {
@@ -60,6 +64,8 @@ public class SocialNetworkFragment extends Fragment {
 
         mWorkFriendsAdapter = new WorkFriendsAdapter();
 
+        mNotificationsAdapter = new NotificationsAdapter();
+
         //FIXME , Why should We Create Another Adapter With Same Implementation
        // mFamilyMembersAdapter = new FamilyMembersAdapter();
 
@@ -71,6 +77,9 @@ public class SocialNetworkFragment extends Fragment {
 
         initRecyclerView(rvFamilyMembers,initLinearLayout(true));
         rvFamilyMembers.setAdapter(mWorkFriendsAdapter);
+
+        initRecyclerView(rvNotificationList,initLinearLayout(false));
+        rvNotificationList.setAdapter(mNotificationsAdapter);
 
         return view;
     }
