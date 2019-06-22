@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@null">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <include
-        layout="@layout/fragment_first_part_three_card_title"/>
+        layout="@layout/list_item_family_friends_members_title"
+        android:id="@+id/cl_rv_family_members_id"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_list_of_work_user_id"
+        android:id="@+id/rv_list_of_family_members_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@null" />

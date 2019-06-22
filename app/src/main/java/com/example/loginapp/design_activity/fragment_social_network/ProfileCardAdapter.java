@@ -17,7 +17,7 @@ public class ProfileCardAdapter extends  RecyclerView.Adapter<ProfileCardAdapter
     public UserProfileCardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        int listItemLayout = R.layout.list_item_user_profile_card;
+        int listItemLayout = R.layout.list_item_users_profile_card;
         View view = inflater.inflate(listItemLayout,parent,false);
         UserProfileCardViewHolder userProfileCardViewHolder = new UserProfileCardViewHolder(view);
         return userProfileCardViewHolder;

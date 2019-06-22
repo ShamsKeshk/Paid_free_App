@@ -4,43 +4,38 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.loginapp.R;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
-public class WorkFriendsAdapter extends RecyclerView.Adapter<WorkFriendsAdapter.WorkFriendsViewHolder>{
-
+public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdapter.FamilyMembersViewHolder> {
 
     @NonNull
     @Override
-    public WorkFriendsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public FamilyMembersViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         int layoutId = R.layout.list_item_family_work_friends_members;
         View view = inflater.inflate(layoutId,parent,false);
-        WorkFriendsViewHolder friendsWorkViewHolder = new WorkFriendsViewHolder(view);
+        FamilyMembersViewHolder friendsWorkViewHolder = new FamilyMembersViewHolder(view);
         return friendsWorkViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull WorkFriendsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull FamilyMembersViewHolder holder, int position) {
 
     }
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 8;
     }
 
-    public class WorkFriendsViewHolder extends RecyclerView.ViewHolder {
+    public class FamilyMembersViewHolder extends RecyclerView.ViewHolder {
 
-        public WorkFriendsViewHolder (View view){
+        public FamilyMembersViewHolder (View view){
             super(view);
 
         }

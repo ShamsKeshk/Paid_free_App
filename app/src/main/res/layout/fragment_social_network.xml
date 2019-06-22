@@ -8,14 +8,15 @@
 
     <include
         android:id="@+id/include"
-        layout="@layout/content_users_profiles_social_network_fragment"
+        layout="@layout/fragment_social_network_content_users_profiles"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <include
 
-        layout="@layout/content_family_members_social_network_fragment"
+        android:id="@+id/include2"
+        layout="@layout/fragment_social_network_content_work_friends"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -23,5 +24,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include" />
+
+    <include
+        layout="@layout/fragment_social_network_content_family_members"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
