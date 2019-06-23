@@ -12,8 +12,8 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.loginapp.R;
 import com.example.loginapp.databinding.ActivityLoginBinding;
-import com.example.loginapp.login.utils.ValidateUtil;
 import com.example.loginapp.login.model.LoginUser;
+import com.example.loginapp.login.utils.ValidateUtil;
 import com.example.loginapp.login.viewmodel.LoginViewModel;
 
 public class LoginActivity extends AppCompatActivity {
@@ -34,10 +34,6 @@ public class LoginActivity extends AppCompatActivity {
 
         binding.setLoginViewModel(loginViewModel);
 
-        LoginUser loginUser = new LoginUser("shams.keshk@gmail.com","kajsdfasdfadf");
-
-        open(loginUser);
-/*
         loginViewModel.getUser().observe(this, new Observer<LoginUser>() {
             @Override
             public void onChanged(LoginUser loginUser) {
@@ -47,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-        */
+
     }
 
     private void open(LoginUser loginUser) {

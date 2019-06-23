@@ -10,5 +10,11 @@
     <color name="first_fragment_list_items_background_color">#2B2C42</color>
     <color name="fragment_first_background">#191A28</color>
     <color name="secondary_text">#898595</color>
+
+    <color name="fragment_social_network_profile_title_color">@color/white</color>
+    <color name="fragment_social_network_profile_description_color">#FF9088</color>
+
+    <color name="second_color">#c481c5</color>
+    <color name="third_color">#65b2fa</color>
 </resources>
 

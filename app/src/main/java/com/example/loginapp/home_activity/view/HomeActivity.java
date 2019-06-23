@@ -18,16 +18,13 @@ import butterknife.ButterKnife;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private String email;
-
     @BindView(R.id.tv_email_landing_activity)
     TextView textView;
-
     @BindView(R.id.btn_ok_landing_activity)
     Button mButton;
-
     @BindView(R.id.btn_open_design_activity_id)
     Button mButtonOpenDesignActivity;
+    private String email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +47,10 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-         mButtonOpenDesignActivity.setOnClickListener(new View.OnClickListener() {
+        mButtonOpenDesignActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 openDesignActivity();
-             //   openDesignActivity();
             }
         });
     }
@@ -64,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void openDesignActivity(){
+    private void openDesignActivity() {
         Intent intent = new Intent(HomeActivity.this, DesignActivity.class);
         startActivity(intent);
     }

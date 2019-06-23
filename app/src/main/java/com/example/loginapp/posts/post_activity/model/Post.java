@@ -11,6 +11,17 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "posts")
 public class Post implements Parcelable {
 
+    public static final Creator<Post> CREATOR = new Creator<Post>() {
+        @Override
+        public Post createFromParcel(Parcel in) {
+            return new Post(in);
+        }
+
+        @Override
+        public Post[] newArray(int size) {
+            return new Post[size];
+        }
+    };
     @PrimaryKey
     @ColumnInfo(name = "id")
     private int id;
@@ -20,7 +31,8 @@ public class Post implements Parcelable {
     @ColumnInfo(name = "body")
     private String body;
 
-    public Post(){}
+    public Post() {
+    }
 
     @Ignore
     public Post(int id, int userId, String title, String body) {
@@ -87,16 +99,4 @@ public class Post implements Parcelable {
         parcel.writeString(title);
         parcel.writeString(body);
     }
-
-    public static final Creator<Post> CREATOR = new Creator<Post>() {
-        @Override
-        public Post createFromParcel(Parcel in) {
-            return new Post(in);
-        }
-
-        @Override
-        public Post[] newArray(int size) {
-            return new Post[size];
-        }
-    };
 }

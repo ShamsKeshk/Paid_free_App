@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.loginapp.R;
 
-public class ProfileCardAdapter extends  RecyclerView.Adapter<ProfileCardAdapter.UserProfileCardViewHolder> {
+import butterknife.ButterKnife;
+
+public class ProfileCardAdapter extends RecyclerView.Adapter<ProfileCardAdapter.UserProfileCardViewHolder> {
 
     @NonNull
     @Override
@@ -18,7 +20,7 @@ public class ProfileCardAdapter extends  RecyclerView.Adapter<ProfileCardAdapter
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         int listItemLayout = R.layout.list_item_users_profile_card;
-        View view = inflater.inflate(listItemLayout,parent,false);
+        View view = inflater.inflate(listItemLayout, parent, false);
         UserProfileCardViewHolder userProfileCardViewHolder = new UserProfileCardViewHolder(view);
         return userProfileCardViewHolder;
     }
@@ -30,13 +32,14 @@ public class ProfileCardAdapter extends  RecyclerView.Adapter<ProfileCardAdapter
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 8;
     }
 
-    public class UserProfileCardViewHolder extends RecyclerView.ViewHolder{
+    public class UserProfileCardViewHolder extends RecyclerView.ViewHolder {
 
-        public UserProfileCardViewHolder(View view){
+        public UserProfileCardViewHolder(View view) {
             super(view);
+            ButterKnife.bind(this, view);
         }
     }
 }

@@ -10,45 +10,42 @@
         android:id="@+id/tv_email_landing_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="184dp"
         android:gravity="center"
         android:textColor="@color/colorPrimary"
         android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_open_design_activity_id"
-        app:layout_constraintVertical_bias="0.256"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Home Activity" />
 
     <Button
         android:id="@+id/btn_ok_landing_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="100dp"
         android:background="@color/btn_open_post_activity_color"
         android:padding="16dp"
         android:text="@string/read_posts"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tv_email_landing_activity"
         app:layout_constraintStart_toStartOf="@+id/tv_email_landing_activity"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email_landing_activity"
-        app:layout_constraintVertical_bias="0.139" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_landing_activity" />
 
     <Button
         android:id="@+id/btn_open_design_activity_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="167dp"
-        android:layout_marginTop="123dp"
-        android:layout_marginEnd="156dp"
-        android:text="Open Design Activity"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="8dp"
+        android:textColor="@color/white"
+        android:padding="16dp"
+        android:background="@color/fragment_first_background"
+        android:text="@string/open_design_activity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_ok_landing_activity" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

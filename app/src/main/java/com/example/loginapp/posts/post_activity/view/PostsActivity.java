@@ -18,16 +18,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.loginapp.R;
 import com.example.loginapp.common.network.CheckNetworkState;
-import com.example.loginapp.posts.utils.ExtraConstants;
-import com.example.loginapp.posts.utils.InjectorUtils;
 import com.example.loginapp.posts.add_post_activity.view.AddPostActivity;
 import com.example.loginapp.posts.post_activity.model.Post;
 import com.example.loginapp.posts.post_activity.viewmodel.PostsViewModel;
 import com.example.loginapp.posts.post_activity.viewmodel.PostsViewModelFactory;
+import com.example.loginapp.posts.utils.ExtraConstants;
+import com.example.loginapp.posts.utils.InjectorUtils;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.util.IllegalFormatCodePointException;
 import java.util.List;
 
 import butterknife.BindView;
@@ -46,11 +45,11 @@ public class PostsActivity extends AppCompatActivity implements PostAdapter.OnPo
 
     private List<Post> mPosts;
 
-    private void openNetworkIfNotOpened(){
-      //  View parentLayout = findViewById(android.R.id.content);
+    private void openNetworkIfNotOpened() {
+        //  View parentLayout = findViewById(android.R.id.content);
 
         //FIXME this should run at onResume
-        if(!CheckNetworkState.isConnectedToNetwork(this)){
+        if (!CheckNetworkState.isConnectedToNetwork(this)) {
             Snackbar.make(mCoordinatorLayout, "No Internet Connection", Snackbar.LENGTH_INDEFINITE)
                     .setAction("Connect Now", new View.OnClickListener() {
                         @Override
@@ -97,7 +96,7 @@ public class PostsActivity extends AppCompatActivity implements PostAdapter.OnPo
                     public void run() {
                         mProgressBar.setVisibility(View.GONE);
                     }
-                },400);
+                }, 400);
             }
         });
         fab.setOnClickListener(new View.OnClickListener() {

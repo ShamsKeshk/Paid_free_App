@@ -18,7 +18,7 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
         int layoutId = R.layout.list_item_family_work_friends_members;
-        View view = inflater.inflate(layoutId,parent,false);
+        View view = inflater.inflate(layoutId, parent, false);
         FamilyMembersViewHolder friendsWorkViewHolder = new FamilyMembersViewHolder(view);
         return friendsWorkViewHolder;
     }
@@ -30,12 +30,12 @@ public class FamilyMembersAdapter extends RecyclerView.Adapter<FamilyMembersAdap
 
     @Override
     public int getItemCount() {
-        return 8;
+        return 7;
     }
 
     public class FamilyMembersViewHolder extends RecyclerView.ViewHolder {
 
-        public FamilyMembersViewHolder (View view){
+        public FamilyMembersViewHolder(View view) {
             super(view);
 
         }

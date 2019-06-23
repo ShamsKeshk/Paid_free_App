@@ -42,7 +42,7 @@
         android:layout_marginStart="167dp"
         android:layout_marginTop="123dp"
         android:layout_marginEnd="156dp"
-        android:text="Open Design Activity"
+        android:text="@string/open_design_activity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

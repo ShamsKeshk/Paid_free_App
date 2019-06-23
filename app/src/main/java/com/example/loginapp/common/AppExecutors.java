@@ -8,38 +8,27 @@ import java.util.concurrent.Executors;
 
 public class AppExecutors {
 
+    private static final Object LOCK = new Object();
+    private static AppExecutors sAppExecutors;
     private Executor networkIo;
     private Executor diskIo;
     private Executor mainThread;
 
-    private static AppExecutors sAppExecutors;
-    private static final Object LOCK = new Object();
 
-
-    private AppExecutors(Executor networkIo,Executor diskIo,Executor mainThread){
+    private AppExecutors(Executor networkIo, Executor diskIo, Executor mainThread) {
         this.networkIo = networkIo;
         this.diskIo = diskIo;
         this.mainThread = mainThread;
     }
 
-    public static AppExecutors getInstance(){
-        if (sAppExecutors == null){
-            synchronized (LOCK){
+    public static AppExecutors getInstance() {
+        if (sAppExecutors == null) {
+            synchronized (LOCK) {
                 sAppExecutors = new AppExecutors(Executors.newFixedThreadPool(3),
-                        Executors.newSingleThreadExecutor(),new MainThreadExecutor());
+                        Executors.newSingleThreadExecutor(), new MainThreadExecutor());
             }
         }
         return sAppExecutors;
-    }
-
-    private static class MainThreadExecutor implements Executor {
-
-        final Handler mHandler = new Handler(Looper.getMainLooper());
-
-        @Override
-        public void execute(Runnable runnable) {
-            mHandler.post(runnable);
-        }
     }
 
     public Executor getNetworkIo() {
@@ -52,5 +41,15 @@ public class AppExecutors {
 
     public Executor getMainThread() {
         return mainThread;
+    }
+
+    private static class MainThreadExecutor implements Executor {
+
+        final Handler mHandler = new Handler(Looper.getMainLooper());
+
+        @Override
+        public void execute(Runnable runnable) {
+            mHandler.post(runnable);
+        }
     }
 }

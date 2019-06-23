@@ -2,13 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:background="@null">
+    android:background="@null"
+    android:orientation="vertical">
 
     <include
-        layout="@layout/list_item_family_friends_members_title"
-        android:id="@+id/cl_rv_work_friends_id"/>
+        android:id="@+id/cl_rv_work_friends_id"
+        layout="@layout/list_item_family_friends_members_title" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_list_of_work_friends_id"

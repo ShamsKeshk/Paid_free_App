@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="10dp"
     app:cardElevation="8dp"
-    app:cardCornerRadius="10dp">
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="110dp"
         android:layout_height="120dp">
 
         <View
-            android:id="@+id/view"
+            android:id="@+id/view_top"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="#FF9088"
@@ -27,7 +25,7 @@
             app:layout_constraintVertical_weight="1" />
 
         <View
-            android:id="@+id/view_2"
+            android:id="@+id/view_bottom"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@color/first_fragment_list_items_background_color"
@@ -38,11 +36,11 @@
             app:layout_constraintVertical_weight="2" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView"
+            android:id="@+id/iv_users_profile_image_id"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/img_1_mark"
+            android:src="@drawable/mark_image"
             app:civ_border_color="@color/white"
             app:civ_border_width="2dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
@@ -66,27 +64,27 @@
             android:gravity="center"
             android:maxLines="1"
             android:text="Polly Simon"
-            android:textColor="@color/white"
+            android:textColor="@color/fragment_social_network_profile_title_color"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/view_2"
-            app:layout_constraintStart_toStartOf="@+id/view_2"
-            app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+            app:layout_constraintEnd_toEndOf="@+id/view_bottom"
+            app:layout_constraintStart_toStartOf="@+id/view_bottom"
+            app:layout_constraintTop_toBottomOf="@+id/iv_users_profile_image_id" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_users_profile_summery_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:ellipsize="end"
             android:gravity="center"
             android:maxLines="2"
-            android:text="Why Las Vigas Rooms For You"
-            android:textColor="@color/secondary_text"
+            android:text="@string/why_las_vigas_rooms_for_you"
+            android:textColor="@color/fragment_social_network_profile_description_color"
             android:textSize="10sp"
-            android:ellipsize="end"
-            app:layout_constraintBottom_toBottomOf="@+id/view_2"
+            app:layout_constraintBottom_toBottomOf="@+id/view_bottom"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_profile_user_name_id" />

@@ -6,9 +6,10 @@ import android.net.NetworkInfo;
 
 public final class CheckNetworkState {
 
-    private CheckNetworkState(){}
+    private CheckNetworkState() {
+    }
 
-    public static boolean isConnectedToNetwork(Context context){
+    public static boolean isConnectedToNetwork(Context context) {
         ConnectivityManager connectivityManager =
                 (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 

@@ -12,7 +12,8 @@ import com.example.loginapp.posts.post_activity.viewmodel.PostsViewModelFactory;
 
 public final class InjectorUtils {
 
-    private InjectorUtils(){}
+    private InjectorUtils() {
+    }
 
     public static NetworkDataSource getNetworkDataSource() {
         return NetworkDataSource.getInstance();
@@ -20,14 +21,14 @@ public final class InjectorUtils {
 
     public static PostsRepository getAppRepository(Context context) {
         PostsDao postsDao = getPostsDatabase(context).postsDao();
-        return PostsRepository.getInstance(getNetworkDataSource(),postsDao,getAppExecutors());
+        return PostsRepository.getInstance(getNetworkDataSource(), postsDao, getAppExecutors());
     }
 
-    public static AppExecutors getAppExecutors(){
+    public static AppExecutors getAppExecutors() {
         return AppExecutors.getInstance();
     }
 
-    public static PostsDatabase getPostsDatabase(Context context){
+    public static PostsDatabase getPostsDatabase(Context context) {
         return PostsDatabase.getInstance(context);
     }
 

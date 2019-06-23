@@ -10,12 +10,12 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.loginapp.R;
 import com.example.loginapp.databinding.ActivityAddPostBinding;
-import com.example.loginapp.posts.utils.ExtraConstants;
-import com.example.loginapp.posts.utils.InjectorUtils;
+import com.example.loginapp.posts.add_post_activity.ValidationUtils;
 import com.example.loginapp.posts.add_post_activity.viewmodel.AddPostActivityViewModel;
 import com.example.loginapp.posts.add_post_activity.viewmodel.AddPostViewModelFactory;
-import com.example.loginapp.posts.add_post_activity.ValidationUtils;
 import com.example.loginapp.posts.post_activity.model.Post;
+import com.example.loginapp.posts.utils.ExtraConstants;
+import com.example.loginapp.posts.utils.InjectorUtils;
 
 public class AddPostActivity extends AppCompatActivity {
 
@@ -44,9 +44,9 @@ public class AddPostActivity extends AppCompatActivity {
             @Override
             public void onChanged(Post posts) {
                 if (ValidationUtils.isDataValidToCreate(posts, binding)) {
-                        Toast.makeText(getApplicationContext(), "Post changed ", Toast.LENGTH_LONG).show();
-                        createPost(posts);
-                    }
+                    Toast.makeText(getApplicationContext(), "Post changed ", Toast.LENGTH_LONG).show();
+                    createPost(posts);
+                }
             }
         });
 

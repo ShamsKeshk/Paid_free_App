@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 
 import com.example.loginapp.posts.post_activity.model.Post;
 
-@Database(entities = Post.class,version = 1,exportSchema = false)
+@Database(entities = Post.class, version = 1, exportSchema = false)
 public abstract class PostsDatabase extends RoomDatabase {
 
     private static final Object LOCK = new Object();
@@ -17,13 +17,13 @@ public abstract class PostsDatabase extends RoomDatabase {
 
     private static PostsDatabase sPostsDatabase;
 
-    public static PostsDatabase getInstance(Context context){
-        if (sPostsDatabase == null){
-            synchronized (LOCK){
+    public static PostsDatabase getInstance(Context context) {
+        if (sPostsDatabase == null) {
+            synchronized (LOCK) {
                 sPostsDatabase = Room.databaseBuilder(
                         context,
                         PostsDatabase.class
-                        ,PostsDatabase.DATABASE_NAME).build();
+                        , PostsDatabase.DATABASE_NAME).build();
             }
         }
         return sPostsDatabase;

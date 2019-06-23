@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="8dp"
     app:cardBackgroundColor="@color/first_fragment_list_items_background_color"
-    app:cardElevation="8dp"
     app:cardCornerRadius="10dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="8dp">
+    app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -43,18 +41,18 @@
             app:layout_constraintGuide_end="8dp" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView2"
+            android:id="@+id/iv_family_or_work_friends_image_id"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/img_1_mark"
+            android:src="@drawable/mark_image"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="2dp"
             app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_two"
             app:layout_constraintEnd_toStartOf="@+id/guideline15"
             app:layout_constraintStart_toStartOf="@+id/guideline_vertical_one"
             app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_one"
-            app:layout_constraintVertical_bias="0.0"
-            app:civ_border_width="2dp"
-            app:civ_border_color="@color/white"/>
+            app:layout_constraintVertical_bias="0.0" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline15"
@@ -64,37 +62,37 @@
             app:layout_constraintGuide_percent=".20" />
 
         <TextView
-            android:id="@+id/tv_user_name_title_profile_id"
+            android:id="@+id/tv_family_or_work_friends_name_id"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:maxLines="1"
-            android:text="Mark"
+            android:text="@string/mark"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintEnd_toStartOf="@+id/textView4"
+            app:layout_constraintEnd_toStartOf="@+id/tv_family_or_work_friends_message_date_id"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline15"
             app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_one" />
 
         <TextView
-            android:id="@+id/tv_user_job_title_profile_id"
+            android:id="@+id/tv_family_or_work_friends_message_id"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:ellipsize="end"
             android:maxLines="1"
-            android:text="Addiction When Gambling Becomes A Proficient"
+            android:text="@string/addiction_when_gambling_becomes_a_proficient"
             android:textColor="@color/secondary_text"
             android:textSize="14sp"
-            android:ellipsize="end"
             app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_two"
             app:layout_constraintEnd_toStartOf="@+id/guideline16"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/guideline15"
-            app:layout_constraintTop_toBottomOf="@+id/tv_user_name_title_profile_id"
+            app:layout_constraintTop_toBottomOf="@+id/tv_family_or_work_friends_name_id"
             app:layout_constraintVertical_bias="0.0" />
 
         <androidx.constraintlayout.widget.Guideline
@@ -105,10 +103,10 @@
             app:layout_constraintGuide_end="32dp" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tv_family_or_work_friends_message_date_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="18:00"
+            android:text="@string/_18_00"
             android:textColor="@color/secondary_text"
             android:textSize="14sp"
             app:layout_constraintEnd_toStartOf="@+id/guideline16"

@@ -21,9 +21,9 @@
         tools:replace="android:label">
         <activity
             android:name=".design_activity.DesignActivity"
+            android:fitsSystemWindows="true"
             android:label="@string/title_activity_design"
-            android:theme="@style/DesignActivityTheme"
-            android:fitsSystemWindows="true"/>
+            android:theme="@style/DesignActivityTheme" />
         <activity
             android:name=".posts.add_post_activity.view.AddPostActivity"
             android:parentActivityName=".posts.post_activity.view.PostsActivity">
